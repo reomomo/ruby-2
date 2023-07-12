@@ -61,33 +61,65 @@ end
 # puts devide(num)
 
 # ピタゴラスの定理
-# def pitagorasu(num)
-#   a+b+c=n
-#   c=n-(a+b)
-#   a** +b** = (n-a-b)(n-a-b)
-#   0 =n** -an -bn -an +ab -bn +ab
-#   0 = n** -2an -2bn +2ab
-#   2an -n** = -2bn +2ab
-#   2an - n**/-2(n-a) = b
-#   2an / 2a
-  
-#   2bn-2ab = n** -2an
-#   b(2n-2a) = n(n-2a)
-#   b = n** -2an / 2(n-a)
-# end
 def pythagorean_triples (n)
-return([]) if n.odd?
+  return([]) if n.odd?
 
-ans = Array.new
-1.step(n) do |a|
-b = n - 0.5 * (n ** 2) / (n - a.to_f)
-case
-when (a > b)
-return(ans)
-when (b.to_i == b)
-ans.push([a, b.to_i, Math.sqrt(a ** 2 + b ** 2).to_i])
-end
-end
+  ans = Array.new
+  1.step(n) do |a|
+    b = n * (a - 0.5 * n) / (a - n)
+    case
+    when (a > b)
+      return(ans)
+    when (b.to_i == b)
+      ans.push([a, b.to_i, Math.sqrt(a ** 2 + b ** 2).to_i])
+    end
+  end
 end
 
-p pythagorean_triples(1000)
+# p pythagorean_triples(1000)
+
+# ピタゴラス（独自）
+ans = Array[]
+n = 1000
+(1..n).each do |a|
+  b = n * (a - 0.5 * n) / (a - n)
+  if a > b
+    break
+  elsif a < b && b == b.to_i
+    ans.push(a, b.to_i, Math.sqrt(a ** 2 + b ** 2).to_i)
+    # p ans
+  end
+end
+
+arr = Array.new
+arr.push(4, 5)
+# p arr
+# puts arr.join(",")
+
+# 15枚の絵札から5枚引く
+# ehuda = Array[]
+# while
+#   for i in 1..15 do
+#     ehuda.push(i)
+#     if arr.size > 5
+#       break
+#     end
+#   end
+#   p ehuda
+# end
+
+
+i = 1
+  while i < 16 do
+    ehuda = Array[]
+    ehuda.push(rand(1..15))
+    ehuda.push(rand(1..15))
+    ehuda.push(rand(1..15))
+    ehuda.push(rand(1..15))
+    ehuda.push(rand(1..15))
+    i += 1
+    # if ehuda.uniq.length != ehuda.length
+    #   break
+    # end
+    p ehuda.sort
+  end
