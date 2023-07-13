@@ -95,31 +95,20 @@ arr = Array.new
 arr.push(4, 5)
 # p arr
 # puts arr.join(",")
+    ehuda = [1,2,3,4,5]
 
-# 15枚の絵札から5枚引く
-# ehuda = Array[]
-# while
-#   for i in 1..15 do
-#     ehuda.push(i)
-#     if arr.size > 5
-#       break
-#     end
-#   end
-#   p ehuda
-# end
+# 15枚の絵札から5枚引く組み合わせ
+ehuda = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
+ehuda.combination(5) do |a,b,c,d,e|
+  # puts "#{a}#{b}#{c}#{d}#{e}"
+end
 
 
-i = 1
-  while i < 16 do
-    ehuda = Array[]
-    ehuda.push(rand(1..15))
-    ehuda.push(rand(1..15))
-    ehuda.push(rand(1..15))
-    ehuda.push(rand(1..15))
-    ehuda.push(rand(1..15))
-    i += 1
-    # if ehuda.uniq.length != ehuda.length
-    #   break
-    # end
-    p ehuda.sort
-  end
+# sudoku
+# a != b != c != d
+a = 2 or 3 or 4 or 9
+b = 2 or 3 or 4 or 9
+c = 2 or 3 or 4 or 9
+d = 2 or 3 or 4 or 9
+a = 50 - (1 + 5 + z.to_i + y.to_i + 8 + 6 + x.to_i + 7 + w.to_i)
+box1 = 50 - (1 + 5 + z.to_i + 7 + v.to_i + 8 + u.to_i + 9 + t.to_i)
