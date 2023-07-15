@@ -1,9 +1,14 @@
 # 組み合わせの算出
-ehuda = [1,2,3,4,5]
+ehuda = [1,2]
 # 重複して利用もするのでゾロ目もあり
-ehuda.repeated_combination(2) do |a,b|
+ehuda.repeated_combination(3) do |a,b|
   # puts "#{a}#{b}"
 end
+
+ehuda.repeated_combination(3).each do |i|
+  # p i
+end
+
 # 重複利用無し（ゾロ目無し）
 ehuda.combination(2) do |a,b|
   # puts "#{a}#{b}"
@@ -19,5 +24,5 @@ color = ["赤", "青", "緑"]
 length = ["長い", "普通", "短い"]
 height = ["上", "中", "下"]
 color.product(length, height).each do |rod|
-  puts rod.join(", ")
+  # puts rod.join(", ")
 end
